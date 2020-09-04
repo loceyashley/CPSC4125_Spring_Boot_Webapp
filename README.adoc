@@ -131,7 +131,7 @@ directory:
 ====
 [subs="attributes"]
 ----
-./gradlew bootRun
+bash ./gradlew bootRun
 ----
 ====
 
@@ -283,7 +283,7 @@ window (in the `complete` directory):
 ====
 [subs="attributes"]
 ----
-./gradlew bootRun
+bash ./gradlew bootRun
 ----
 ====
 

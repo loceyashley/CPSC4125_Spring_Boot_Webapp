@@ -8,15 +8,15 @@ import org.springframework.ui.Model;
 @Controller
 public class HelloController {
 
-	// @GetMapping("/")
-	// public String index() {
-	// 	return "Greetings from Spring Boot!";
-    // }
-    
     @GetMapping("/")
 	public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
 		model.addAttribute("name", name);
 		return "greeting";
-	}
+    }
+    
+    @GetMapping("/contact")
+    public String contact(Model model){
+        return "contact";
+    }
 
 }
