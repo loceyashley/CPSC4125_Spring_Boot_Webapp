@@ -34,4 +34,7 @@ public class HelloController {
         return "about";
     }
 
+    //adding another GET and POST similar to contact, public postBlog(Blog)
+    //new object blog needs a string
+
 }

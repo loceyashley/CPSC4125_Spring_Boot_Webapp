@@ -44,6 +44,9 @@
             event.preventDefault();
             //default way to send data is as a JSON {"var":"value","var":"value"....}
             //get Values from the form above and assign to variable names
+            
+            //console.log(exampleFormControlInput1.value); would print the input for email
+            //console.log(exampleFormControlTextarea1.value); would get and print the input for textarea (message)
             var formData = {"email": exampleFormControlInput1.value, "message": exampleFormControlTextarea1.value};
             $.ajax({
                 type: 'POST',
