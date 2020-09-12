@@ -1,3 +1,8 @@
+<!--//form 
+ajax call 
+the nav
+input box
+submit button-->
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,16 +12,25 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"  />
 
-    <title>Blog</title>
+    <title>Question</title>
   </head>
   <body>
     <div th:replace="fragments/header :: header(content='contact')"></div>
     <div class="jumbotron">
-        <h1 class="display-4">Blog Post</h1>
+        <h1 class="display-4">Answer The Question</h1>
         <hr class="my-4">
-    
     </div>
+     <form id="blog-form">
+      <div id="BlogQ" style="font-size: 50px; font-style: bold; text-align: center; color:blue; border-style:solid; border-color:black;">What type of snack do you prefer?</div>
+        <div class="form-group">
+            <center><label for="exampleFormControlTextarea1">salty or sweet</label></center>
+            <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </form>
+   
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -25,6 +39,30 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
+    <!-- Javascript for the submission of the form using Jquery and Ajax -->
+    <script>
+        //form handler
+        $("#blog-form").submit(function(event){
+            //stop form from submitting as it normally would
+            event.preventDefault();
+            //default way to send data is as a JSON {"var":"value","var":"value"....}
+            //get Values from the form above and assign to variable names
+            
+            //console.log(exampleFormControlInput1.value); would print the input for email
+            //console.log(exampleFormControlTextarea1.value); would get and print the input for textarea (message)
+            var formData = {"answer": exampleFormControlTextarea1.value};
+            $.ajax({
+                type: 'POST',
+                url: '/blog',
+                data: JSON.stringify(formData),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function(data){
+                    console.log(data);
+                }
+            });
+        });
+    </script>
    
   </body>
 </html>
