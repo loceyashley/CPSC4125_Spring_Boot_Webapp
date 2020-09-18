@@ -16,6 +16,8 @@
         <h1 class="display-4">Contact Me</h1>
         <p class="lead">Fill out the form below to contact me.</p>
         <hr class="my-4">
+        <div id="ajaxResponse">
+        </div>
         <form id="contact-form">
             <div class="form-group">
                 <label for="exampleFormControlInput1">Email address</label>
@@ -27,6 +29,7 @@
             </div>
             <button type="submit" class="btn btn-primary btn-lg">Submit</button>
         </form>
+        
     </div>
 
     <!-- Optional JavaScript -->
@@ -44,7 +47,6 @@
             event.preventDefault();
             //default way to send data is as a JSON {"var":"value","var":"value"....}
             //get Values from the form above and assign to variable names
-            
             //console.log(exampleFormControlInput1.value); would print the input for email
             //console.log(exampleFormControlTextarea1.value); would get and print the input for textarea (message)
             var formData = {"email": exampleFormControlInput1.value, "message": exampleFormControlTextarea1.value};
@@ -53,9 +55,12 @@
                 url: '/contact',
                 data: JSON.stringify(formData),
                 contentType: "application/json; charset=utf-8",
-                dataType: "json",
                 success: function(data){
-                    console.log(data);
+                    $('#ajaxResponse').html(data);
+                },
+                error: function(e){
+                    console.log(e);
+                    $('#ajaxResponse').html('<span>Sorry we couldnt complete your request</span>');
                 }
             });
         });
