@@ -37,4 +37,17 @@ public class HelloController {
     //adding another GET and POST similar to contact, public postBlog(Blog)
     //new object blog needs a string
 
+    @GetMapping("/blog")
+    public String blog(Model model){
+        return "blog";
+    }
+
+    @PostMapping("/blog")
+    public String postBlog(Model model, @RequestBody Blog blog){
+        //return fragment ContactResponse
+        model.addAttribute("answer", blog.getAnswer());
+        return "fragments/blogResponse :: #blogSuccess";
+    }
+
+
 }

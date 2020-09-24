@@ -11,12 +11,13 @@
     <title>About Me</title>
   </head>
   <body>
+  <style> body{  background-color: #ffffe6;}</style>
     <div th:replace="fragments/header :: header(content='about')"></div>
 
     <!--Background Color-->
-    <body style="background-color:powderblue;">
+   <!---- <body style="background-color:powderblue;">-->
    
-    <div id="about-me" class="jumbotron">
+    <div id="about-me" class="jumbotron bg-dark text-white">
         <h1 class="display-4"></h1>
         <p class="shadow p-3 mb-3 bg-blue rounded">Ashley Locey</div>
         <hr class="my-4">
@@ -38,7 +39,7 @@
     </p></center>
 
    <!--non profit information-->
-   <div id="nonprofit" class="jumbotron">
+   <div id="nonprofit" class="jumbotron bg-dark text-white">
         <h1 class="display-4">
         <div class="shadow p-3 mb-3 bg-blue rounded">Animal SOS</div>
         </h1>
