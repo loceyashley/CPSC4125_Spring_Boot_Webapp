@@ -26,8 +26,7 @@
      
     <!-- Added div to load image of the day with id -->
     <div id="nasaAPOD">
-    <img src="http://apod.nasa.gov/apod/image/2009/ig_maxmin.jpg" alt="NASA pic of the day" style="height:50px; width:50px">
-    Title: something nasa
+   
      
     </div>
 
@@ -36,19 +35,19 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
-     <!-- added jquery JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!--added jquery for nasapod -->
     <script>
         $( document ).ready(function() {
-            console.log( "ready!" );
-            $.ajax({
+        console.log( "ready!" );
+        $.ajax({
                 type: 'GET',
-                url: 'https://api.nasa.gov/planetary/apod?api_key=7lqr4qoVCaJweZv9hp89XHb6he3UEqesrowGwAMa',
-                dataType: 'json',
+                url: 'https://api.nasa.gov/planetary/apod_key=H8eCe2NbWj1fNe4JhZOY9t7sVgpuceEny7qABhSk',
+                dataType: 'json', 
                 success: function(data){
                     console.log(data);
-                    $('#nasaAPOD').css('background',"url('" + data.url + "')");
+                    $('#nasaAPOD').html(data);
                 },
                 error: function(e){
                     console.log(e);
