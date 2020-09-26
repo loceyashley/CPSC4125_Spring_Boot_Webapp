@@ -11,7 +11,7 @@
     <title>Greetings</title>
   </head>
   <body>
-    <style> body{  background-color: #ffffe6;}</style>
+    <style> body{ background-color: #ffffe6;}</style>
     <div th:replace="fragments/header :: header(content='home')"></div>
     
     <div class="jumbotron bg-dark text-white">
@@ -25,7 +25,9 @@
     </div>
      
     <!-- Added div to load image of the day with id -->
-    <div id="nasaAPOD"> </div>
+    <div id="nasaAPOD" style="background-image: url(http://apod.nasa.gov/apod/image/2009/ig_maxmin.jpg); height: 50vw; width:200vw;"> 
+     
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
