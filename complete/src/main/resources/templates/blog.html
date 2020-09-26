@@ -59,20 +59,19 @@ submit button-->
         $("#blog-form").submit(function(event){
             //stop form from submitting as it normally would
             event.preventDefault();
-            //default way to send data is as a JSON {"var":"value","var":"value"....}
-            //get Values from the form above and assign to variable names
             
-            //console.log(exampleFormControlInput1.value); would print the input for email
-            //console.log(exampleFormControlTextarea1.value); would get and print the input for textarea (message)
-            var formData = {"answer": exampleFormControlTextarea1.value};
+            var formData = {"message": exampleFormControlTextarea1.value};
             $.ajax({
                 type: 'POST',
                 url: '/blog',
                 data: JSON.stringify(formData),
                 contentType: "application/json; charset=utf-8",
-                dataType: "json",
                 success: function(data){
-                    console.log(data);
+                    $('#ajaxResponse').html(data);
+                },
+                error: function(e){
+                    console.log(e);
+                    $('#ajaxResponse').html('<span>Sorry we couldnt complete your request</span>');
                 }
             });
         });

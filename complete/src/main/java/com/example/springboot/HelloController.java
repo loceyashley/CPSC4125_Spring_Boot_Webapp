@@ -42,10 +42,9 @@ public class HelloController {
         return "blog";
     }
 
-    @PostMapping("/blog")
+   @PostMapping("/blog")
     public String postBlog(Model model, @RequestBody Blog blog){
-        //return fragment ContactResponse
-        model.addAttribute("answer", blog.getAnswer());
+        model.addAttribute("message", blog.getMessage());
         return "fragments/blogResponse :: #blogSuccess";
     }
 
