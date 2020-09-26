@@ -24,7 +24,7 @@
         <a class="btn btn-primary btn-lg" href="/about" role="button">Learn more</a>
     </div>
 
-     <p style= "text-align: center; text-size: 20px; font-weight:bold;"> Nasa's Image of the Day </p>
+     <p style= "text-align: center; text-size: 20px; font-weight:bold; color:red;"> Nasa's Image of the Day </p>
      
     <!-- Added div to load image of the day with id -->
     <div id="nasaAPOD">
@@ -42,10 +42,12 @@
     <!--added jquery for nasapod -->
     <style>
     #nasaAPOD{
-        font-size: 40px;
-        color: red;
+        font-size: 25px;
+        color: black;
         font-weight: bold;
-        text-align: center;
+        text-align:  center;
+        margin-left: 50px;
+        margin-right: 50px;
         
     }
     </style>
@@ -57,7 +59,7 @@
                 url: 'https://api.nasa.gov/planetary/apod?api_key=H8eCe2NbWj1fNe4JhZOY9t7sVgpuceEny7qABhSk',
                 dataType: 'json', 
                 success: function(data){
-                    $('#nasaAPOD').html('<span class = "nasa">' + data.title + "  | " + data.description + "  | "  + data.date + '</span>' + '<img src="' + data.url + '" alt="NasaPic"/>');
+                    $('#nasaAPOD').html('<span class = "nasa">' + "Title: " + data.title + "  <br><br>" + " Description: " + data.explanation + "  <br><br> "  +  "Date: " + data.date + '</span>' + " <br><br>" + '<img src="' + data.url + '" alt="NasaPic"/>');
                    
                 },
                 error: function(e){
@@ -66,6 +68,13 @@
             });
         });
     </script>
+
+    <!--space-->
+    <p>
+
+
+
+    </p>
 
   </body>
 </html>
