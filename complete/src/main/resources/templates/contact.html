@@ -8,28 +8,28 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Contact Me</title>
   </head>
   <body>
   <style> body{  background-color: #ffffe6;}</style>
     <div th:replace="fragments/header :: header(content='contact')"></div>
     <div class="jumbotron bg-dark text-white">
-        <h1 class="display-4">Contact Me <img width=" 500" height="200" alt="connect saying" src="img/connect.jpeg" style="align:right; margin-left:350px;"> </h1>
-        <p class="lead">Fill out the form below to contact me.</p>
-        <hr class="my-4">
-        <div id="ajaxResponse">
+    <!--contact photo-->
+    <h1 class="display-4">Contact Me <img width=" 500" height="200" alt="connect saying" src="img/connect.jpeg" style="align:right; margin-left:350px;"> </h1>
+    <p class="lead">Fill out the form below to contact me.</p>
+    <hr class="my-4">
+    <div id="ajaxResponse"></div>
+     <form id="contact-form">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Email address</label>
+            <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
         </div>
-        <form id="contact-form">
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Email address</label>
-                <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1">Example textarea</label>
-                <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Example textarea</label>
+            <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
             <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-        </form>
+      </form>
     </div>
 
     <!-- Optional JavaScript -->
