@@ -56,11 +56,10 @@
         console.log( "ready!" );
         $.ajax({
                 type: 'GET',
-                url: 'https://api.nasa.gov/planetary/apod?api_key=H8eCe2NbWj1fNe4JhZOY9t7sVgpuceEny7qABhSk',
+                url: 'https://api.nasa.gov/planetary/apod?api_key=5ir4S9Edp6wb6mgmQG8JzA1D1i6352XEq4TMxlug',
                 dataType: 'json', 
                 success: function(data){
-                    $('#nasaAPOD').html('<span class = "nasa">' + "Title: " + data.title + "  <br><br>" + " Description: " + data.explanation + "  <br><br> "  +  "Date: " + data.date + '</span>' + " <br><br>" + '<img src="' + data.url + '" alt="NasaPic"/>');
-                   
+                   $('#nasaAPOD').html('<span>' + "Title: " + data.title + "  <br><br>" + " Description: " + data.explanation + "  <br><br> "  +  "Date: " + data.date + '</span>' + " <br><br>" + '<img src="'  + data.url + '" alt="NasaPic"/>');
                 },
                 error: function(e){
                     console.log(e);
