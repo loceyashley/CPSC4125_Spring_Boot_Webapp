@@ -16,3 +16,13 @@
     background-color: #ffffe6;
 }
 
+#blogP{
+    width:500px;
+    height: 300px;
+    text-align: center;
+    margin-left: 1000px;
+    font-weight:bold;
+    border-style: solid;
+    font-size: 19px;
+    
+}
